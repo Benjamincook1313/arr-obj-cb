@@ -175,6 +175,18 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
+function removeItem(myGroceryList, item){
+  if(!item) return [];
+  let idx = myGroceryList.indexOf(item);
+  if(myGroceryList && idx > -1) myGroceryList.splice(idx, 1);
+  return myGroceryList;
+}
+
+function addItem(myGroceryList, item){
+  if(myGroceryList) myGroceryList.push(item);
+  if(!item) return [];
+  return myGroceryList;
+}
 
 ////////// PROBLEM 9 //////////
 
@@ -183,6 +195,14 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
+function maker(){
+  let arr = [];
+  for (let i = 1; i <= 215; i++) {
+    arr.push(i);
+    
+  }
+  return arr;
+}
 
 ////////// PROBLEM 10 //////////
 
@@ -197,6 +217,9 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 */
 
 //Code Here
+function addTen(nums){
+  return nums.map(num => +num + 10);
+}
 
 ////////// PROBLEM 11 //////////
 
@@ -220,6 +243,9 @@ for (var i = 0; i < num2; i++) {
 */
 
 //Code Here
+function longer(arr1, arr2){
+  return arr1.length > arr2.length? arr1: arr2;
+}
 
 /*
   As a continuation of the previous problem, write another function called 'both'.
@@ -230,6 +256,15 @@ for (var i = 0; i < num2; i++) {
 */
 
 //Code Here
+function both(arr1, arr2){
+  let answer = [];
+  for (let i = 0; i < arr1.length; i++) {
+    if(arr2.includes(arr1[i])){
+      answer.push(arr1[i]);
+    }
+  }
+  return answer;
+}
 
 ////////// PROBLEM 12 //////////
 
@@ -269,6 +304,8 @@ var colt = {
 */
 
 //Code Here
+devMountainEmployees.push(colt, ryan, cahlan, joe);
+console.log(devMountainEmployees.length)
 
 /*
   Now let's say Cahlan has to take a leave of absence.
@@ -276,6 +313,9 @@ var colt = {
 */
 
 //Code Here
+for (let i = 0; i < devMountainEmployees.length; i++) {
+  if(devMountainEmployees[i].name === "Cahlan") devMountainEmployees.splice(i,1);
+}
 
 ////////// PROBLEM 13 //////////
 
@@ -285,6 +325,26 @@ var colt = {
 */
 
 //Code Here
+const users = [
+  {
+    name: "Benjamin",
+    email: "benji13@testmail.com",
+    password: "asdf1234",
+    username: "capt-cook"
+  },
+  {
+    name: "John",
+    email: "john@testmail.com",
+    password: "password",
+    username: "johnDoe"
+  },
+  {
+    name: "Barry",
+    email: "bry@testmail.com",
+    password: "asdflkjh",
+    username: "stRongPass@!45"
+  },
+];
 
 /*
   Now add three user objects to your users array. Each user object should contain the following properties: name, email, password, username.
@@ -304,6 +364,7 @@ var user1 = {
 // Do not edit the code above.
 
 //Code Here
+users.push(user1);
 
 /*
   Now you have a very common data structure. 
@@ -316,6 +377,11 @@ var user1 = {
 */
 
 //Code Here
+for (let i = 0; i < users.length; i++) {
+  if(users[i].email ===  "mark.mciver@devmounta.in"){
+    users.splice(i, 1);
+  }
+}
 
 /*
   The activity we just did is very much how data works in 'the real world'.
